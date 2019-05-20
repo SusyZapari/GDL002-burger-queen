@@ -1,27 +1,28 @@
-import React from 'react';
-import Food from './Food';
-import MealTime from './MealTime';
-import PaniniImage from './paniniSelvaNegra.jpeg';
-import './App.css';
+import React, {Component} from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import "./App.css";
+import Home from './Components/Home';
+import Menu from './Components/Menu';
 
-function App() {
- return (
- <div>
-    <div>
-      <MealTime mealName="Desayuno"/>
-      <MealTime mealName="Comida"/>
-    </div>
-    <div>
-      <Food name="Panini selva negra" price ="75" image ={PaniniImage}/>
-      <Food name="Panini de panela" price ="65"/>
-      <Food name="Panini portobello" price ="80"/>
-      <Food name="Panini lomo canadiense" price ="60"/>
-      <Food name="Panini de salmón" price ="85"/>
-      <Food name="Panini de atún" price ="70"/>
-      <Food name="Panini de pollo" price ="75"/>
-    </div>
-  </div>
- );
+
+
+
+class App extends Component {
+  render () { 
+    return (
+      <BrowserRouter>
+      <Switch>
+        <Route exact path = '/' component = {Home} />
+        <Route path = '/Home' component = {Home} />
+        <Route path='/Menu' component={Menu} />
+
+      </Switch>
+      </BrowserRouter>
+      
+    );
+  }
 }
+ 
+ 
 
 export default App;
