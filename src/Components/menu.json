@@ -2,63 +2,64 @@
     "breakfast": [
         {
             "description": "Café americano",
-            "price": "$5",
-            "type":  "drink"
+            "price": 5,
+            "image": "http://www.drradio.com.mx/wp-content/uploads/2017/06/Coffee-Cup-Bowl-With-Grains-Images-1068x601.jpg"
         },
         {
             "description": "Café con leche",
-            "price": "$7",
-            "type":  "drink"
+            "price": 7,
+            "image": "http://forbes.es/app/uploads/2017/08/portadaGettyImages-472209108.jpg"
+
         },
         {
             "description": "Jugo de frutas natural",
-            "price": "$7",
-            "type":  "drink"
+            "price": 7,
+            "image": "https://www.pollosmario83.com/288-tm_large_default/jugo-de-naranja-natural.jpg"
         },
         {
             "description": "Sandwich de jamón y queso",
-            "price": "$10",
-            "type":  "food"
+            "price": 10,
+            "image":  "https://okdiario.com/img/2018/03/18/sandwich-mixto-655x368.jpg"
         }],
-    "meal":[{
+    "lunch":[{
                 "description": "Hamburguesa simple",
-                "price": "$10",
-                "type":  "hamburger"
+                "price": 10,
+                "image": "https://labcowork.com/venturaplaza/wp-content/uploads/2017/05/corral-tres-cuartos-de-libra.png"
             },
             {
                 "description": "Hamburguesa doble",
-                "price": "$15",
-                "type":  "hamburger"
+                "price": 15,
+                "image":  "https://chadwicksnaturals.com/wp-content/uploads/2017/07/BaconCheeseburger.png"
             },
             {
                 "description": "Papas fritas",
-                "price": "$5",
-                "type":  "extra"
+                "price": 5,
+                "image":  "https://http2.mlstatic.com/100-cajas-para-papas-a-la-francesa-x-270-D_NQ_NP_900677-MLM27222960638_042018-Q.jpg"
             },
             {
                 "description": "Aros de cebolla",
-                "price": "$7",
-                "type":  "extra"
+                "price": 7,
+                "image":  "https://placeralplato.com/files/2017/04/Aros-de-cebolla.jpg"
             },
             {
                 "description": "Agua 500ml",
-                "price": "$5",
-                "type":  "drinks"
+                "price": 5,
+                "image":  "https://pngimage.net/wp-content/uploads/2018/05/agua-mineral-500ml-png-2.png"
             },
             {
                 "description": "Agua 750ml",
-                "price": "$7",
-                "type":  "drinks"
+                "price": 7,
+                "image":  "https://www.lacomer.com.mx/superc/img_art/8003430075107_10.jpg"
             },
             {
                 "description": "Bebida/gaseosa 500ml",
-                "price": "$7",
-                "type":  "drinks"
+                "price": 7,
+                "image":  "https://http2.mlstatic.com/gaseosa-sin-azucar-coca-cola-600-ml-D_NQ_NP_750388-MLA29506704164_022019-F.jpg"
             },
             {
                 "description": "Bebida/gaseosa 750ml",
-                "price": "$10",
-                "type":  "drinks"
+                "price": 10,
+                "image":  "https://www.tutrebol.es/1914-large_default/refresco-naranja-fanta-500-ml.jpg"
             }
     ],
     "waiter":[{

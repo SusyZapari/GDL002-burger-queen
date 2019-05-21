@@ -15,7 +15,13 @@ class Food extends Component {
             return (
             
         
-                <button className="btn btn-info" type="button" name={i} onClick={this.onClick}> {breakfastObject.description}{breakfastObject.price} </button>
+                <button className="btn btn-warning" 
+                type="button" 
+                name={i} onClick={this.onClick}> 
+                    <label>{breakfastObject.description}</label>
+                    <label>${breakfastObject.price}.00</label>
+                    <img src={breakfastObject.image} />
+                </button>
             )
         })
 

@@ -10,14 +10,19 @@ import Menu from './Components/Menu';
 class App extends Component {
   render () { 
     return (
+      
+      <nav>
+    <ul className="flex-row">
       <BrowserRouter>
       <Switch>
-        <Route exact path = '/' component = {Home} />
-        <Route path = '/Home' component = {Home} />
-        <Route path='/Menu' component={Menu} />
+      <Route exact path = '/' component = {Home} />
+      <Route path = '/Home' component = {Home} />
+      <Route path='/Menu' component={Menu} />
 
       </Switch>
       </BrowserRouter>
+      </ul></nav>
+      
       
     );
   }

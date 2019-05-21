@@ -6,12 +6,16 @@ class Home extends Component {
         return (
         <div className= "backgroundHome">
         <img className= "logo" src={logo} alt="logo"/>
-        <button type= "button" className="caja"> CAJA </button>
-        <button type= "button" className="cocina"> COCINA </button>
+        
+        <button type= "button" className="btn btn-dark" > CAJA </button>
+        <button type= "button" className="btn btn-danger" > COCINA </button>
 
         </div>
         );
     }
 }
 
-export default Home 
+
+
+
+export default Home;
