@@ -10,7 +10,7 @@ class MealTime extends React.Component{
     }
     render(){
         return (
-            <button type="button" class="btn btn-secondary">{this.props.mealName}</button>
+            <button type="button" class="btn btn-warning">{this.props.mealName}</button>
         );
     }
 }

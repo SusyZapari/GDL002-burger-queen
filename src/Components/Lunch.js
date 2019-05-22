@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
-import {meal} from "./menu.json";
+import {lunch} from "./menu.json";
 
 
 class Lunch extends Component {
     constructor() {
         super();
         this.state = {
-            meal
+            lunch
         }
     }
 
     render(){
-        const Lunch = this.state.Lunch.map ((LunchObject, i) =>{
+        const lunch = this.state.lunch.map ((lunchObject, i) =>{
             return (
             
         
-                <button className="btn btn-warning" type="button" name={i} onClick={this.onClick}> {mealObject.description}{mealObject.price} {mealObject.image} </button>
+                <button className="btn btn-warning" type="button" key={i} name={lunchOnject.description} value={lunchObject}onClick={this.onClick}> {lunchObject.description}{lunchObject.price} {lunchObject.image} </button>
             )
         })
 

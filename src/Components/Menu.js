@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Food from "./Food";
 
+
 class Menu extends Component {
   render(){
     return (
