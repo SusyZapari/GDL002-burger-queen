@@ -5,9 +5,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 const Home = () => (
     <div className= "backgroundHome">
         <img className= "logo" src={logo} alt="logo"/>
-        
-        <button type= "button" className="btn btn-dark" > <Link to="/menu">MESERO</Link> </button>
-        <button type= "button" className="btn btn-danger" > <Link to="/menu">COCINA </Link> </button>
+    
     </div>
 );
 // class Home extends Component {
