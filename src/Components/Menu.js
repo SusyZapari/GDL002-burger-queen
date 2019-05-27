@@ -1,58 +1,72 @@
 import React, { Component } from 'react';
 import Food from "./Food";
-
+import menu from "./menu.json";
+import { Button, Container, Row, Col, Jumbotron} from 'reactstrap';
 
 class Menu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedMealTime: " ",
+      foodList: [],
+      total: 0
+    }
+ }
+
+  selectBreakfast = () => {
+    this.setState(
+      { 
+        selectedMealTime: "Desayuno" ,
+        foodList: menu.breakfast
+      }
+    );
+  }
+
+  selectLunch= () => {
+    this.setState(
+      {
+        selectedMealTime: "Comida" ,
+        foodList: menu.lunch
+      }
+    );
+  }
+
+  handleFoodClick = clickedIndex => {
+    const newTotal = this.state.total + this.state.foodList[clickedIndex].price;
+    this.setState({
+      total: newTotal
+    });
+  };
+
   render(){
+    
     return (
-      
-      <div className= "backgroundMenu"> 
-       <div className= "menu">
-     <div className= "breakfast">
-     <h2 className= "breakfastTitle">DESAYUNO</h2>
-       <Food/>
-       </div>
-     </div>
-      </div>
+      <Container>
+        <Row>
+          <Col><Button color="danger" onClick={this.selectBreakfast}>DESAYUNO</Button></Col>
+          <Col><Button color="warning" onClick={this.selectLunch}>COMIDA</Button></Col>
+        </Row>
+        <hr/>
+
+        <Row>
+          <Food title={this.state.selectedMealTime}
+                foodList={this.state.foodList}
+                handleFoodClick={this.handleFoodClick}>
+          </Food> 
+        </Row>
+        <Row>
+        <Jumbotron fluid>
+        <Container fluid>
+          <Row><Col><h2>Comanda</h2></Col></Row>
+          <Row>
+            <Col>Total: ${this.state.total}</Col>
+          </Row>
+          </Container>
+          </Jumbotron>
+        </Row>
+      </Container>
     );
   }
 }
 
-  export default Menu;
-
-//   constructor(props){
-//       super(props);
-//       this.state = {
-//          orders:[]
-//       }
-//        this.submit = this.submit.bind(this);
-// }
-// submit(nameItem, price){
-//   const orders = this.state.orders;
-//   const order = {
-//     item: nameItem,
-//     price: price
-//   }
-// // setState y spread operator
-//   orders.push(order);
-//   console.log(this.state.orders); 
-//   }
-  
-  
-//     render(){ 
-//         return (
-//           <div>
-//               {breakfast.map((items, index) =>
-//               <div key={index}>
-//                   <h5>{items.description}</h5>
-//                   <h5>{items.price}</h5>
-                    
-                       
-//                        <button size="small" type="submit" onClick={()=>{this.submit(items.description ,items.price);}}>Add+</button>
-                    
-//               </div>
-//  )}  
-//           </div>
-// )
-// }
-// }
+export default Menu;

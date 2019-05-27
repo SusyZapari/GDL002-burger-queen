@@ -1,19 +1,38 @@
 import React, {Component, useState} from 'react';
-import {breakfast} from "./menu.json";
-const Food = () => {
-    const [breakfast, setBreakfast] = useState(['breakfast', 'adsd', 'dasd']);
+import { Button, Container, Row, Col, Jumbotron, Badge} from 'reactstrap';
 
+class Food extends Component {
+
+ render(){
+   
   return (
     <div>
-      <p>You clicked {breakfast} times</p>
-      <button onClick={() => setBreakfast(breakfast + 'hamburguesa --- ')}>
-        Click me
-      </button>
+    <Jumbotron fluid>
+      <Container fluid>
+        <Row><Col><h2>{this.props.title}</h2></Col></Row>
+        <Row>
+
+        {
+          this.props.foodList.map((food, index) => {
+            return <Col key={index}>
+              <Button color="info" onClick={() => {this.props.handleFoodClick(index)}}>
+                {food.description}
+                <Badge color="danger" pill>${food.price}</Badge>
+              </Button>
+            </Col>
+          })
+        }
+        </Row>
+      </Container>
+    </Jumbotron>
+  
+      
     </div>
   );
 }
+}
 
-// class Food extends Component {
+ //class Food extends Component {
 //     constructor() {
 //         super();
 //         this.state = {
