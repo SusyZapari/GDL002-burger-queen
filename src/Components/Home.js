@@ -22,8 +22,4 @@ const Home = () => (
 //     }
 // }
 
-
-//Prueba//
-//Prueba 2//
-
 export default Home;
