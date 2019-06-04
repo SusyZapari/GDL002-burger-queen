@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Food from "./Food";
 import menu from "./menu.json";
 import logo from "../Images/logo.png";
-import { Button, Container, Row, Col, Jumbotron, ListGroup, ListGroupItem} from 'reactstrap';
+import { Button, Container, Row, Col, Jumbotron, ListGroup, ListGroupItem, Badge} from 'reactstrap';
 
 class Menu extends Component {
   constructor() {
@@ -11,6 +11,7 @@ class Menu extends Component {
       selectedMealTime: " ",
       foodList: [],
       orders: [],
+      orderPrices: [],
       total: 0
     }
  }
@@ -40,14 +41,38 @@ class Menu extends Component {
   handleFoodClick = clickedIndex => {
     const newTotal = this.state.total + this.state.foodList[clickedIndex].price;
     let newOrder =  this.state.orders;
+    let newOrderPrices =  this.state.orderPrices;
     
-    newOrder.push(this.state.foodList[clickedIndex].description);
+    newOrder.push(this.state.foodList[clickedIndex].description + " $" + this.state.foodList[clickedIndex].price);
+    newOrderPrices.push(this.state.foodList[clickedIndex].price);
     
     this.setState({
       total: newTotal,
-      orders: newOrder
+      orders: newOrder,
+      orderPrices: newOrderPrices
     });
   };
+
+  deleteFood = clickedIndex => {
+    const newTotal = this.state.total - this.state.orderPrices[clickedIndex];
+
+    let updatedOrders = this.state.orders.filter(
+      function(value, index, arr){
+        return index !== clickedIndex
+      });
+
+
+    let updatedOrderPrices = this.state.orderPrices.filter(
+      function(value, index, arr){
+        return index !== clickedIndex
+      });
+
+    this.setState({
+      total: newTotal,
+      orders: updatedOrders,
+      orderPrices: updatedOrderPrices
+    });
+  }
 
   render(){
     
@@ -77,8 +102,8 @@ class Menu extends Component {
                     <Row>
                         <ListGroup>
                         {
-                          this.state.orders.map(order =>{
-                            return <ListGroupItem>{order}</ListGroupItem>
+                          this.state.orders.map((order, index)  =>{
+                            return <ListGroupItem>{order} <Badge color="danger" onClick={() => {this.deleteFood(index)}}>X</Badge> </ListGroupItem>
                           })
                         }
                         </ListGroup>

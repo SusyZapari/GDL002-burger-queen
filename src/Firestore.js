@@ -1,4 +1,4 @@
-import firebase from "firebase";
+/*import firebase from "firebase";
 
 // Initialize Firebase
   // TODO: Replace with your project's customized code snippet
@@ -18,3 +18,4 @@ import firebase from "firebase";
 
 
 export default firebase;
+*/
