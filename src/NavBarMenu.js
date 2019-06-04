@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import logo from "./Images/logo.png";
 import { UncontrolledDropdown, DropdownToggle, Navbar, NavbarBrand, DropdownMenu, DropdownItem, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 export const NavBarMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Navbar color="dark" light expand="md">
       <NavbarBrand style={{color: 'white'}}>
-      <Link to="/">BurgerQueen</Link>
+      <Link to="/">
+        <img className= "logo" src={logo} alt="logo"/>
+      </Link>
       </NavbarBrand>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>

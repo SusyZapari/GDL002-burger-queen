@@ -1,11 +1,10 @@
 import React, {Component} from "react";
-import logo from "../Images/logo.png";
+import BQ from "../Images/BQ.jpg";
 import { Container, Row, Button, Col } from 'reactstrap';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 const Home = () => (
     <div className= "backgroundHome">
-        <img className= "logo" src={logo} alt="logo"/>
-    
+        <img className= "restaurantPhoto" src={BQ} alt="logo"/>
     </div>
 );
 // class Home extends Component {
