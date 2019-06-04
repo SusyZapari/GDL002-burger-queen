@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Food from "./Food";
 import menu from "./menu.json";
 import logo from "../Images/logo.png";
-import { Button, Container, Row, Col, Jumbotron, ListGroup, ListGroupItem, Badge} from 'reactstrap';
+import { Button, Container, Row, Col, Jumbotron, ListGroup, ListGroupItem, Badge, Input } from 'reactstrap';
 
 class Menu extends Component {
   constructor() {
@@ -108,7 +108,10 @@ class Menu extends Component {
                         }
                         </ListGroup>
                     </Row>
+                    <hr/>
                     <Row><Col>Total: ${this.state.total}</Col></Row>
+                    <Row><strong>Comentarios</strong></Row>
+                    <Row><Input type="textarea" name="text" id="exampleText" /></Row>
                   </Jumbotron>
               </Col>
             </Row>
