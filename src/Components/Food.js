@@ -7,8 +7,7 @@ class Food extends Component {
    
   return (
     <div>
-    <Jumbotron fluid>
-      <Container fluid>
+      <Container>
         <Row><Col><h2>{this.props.title}</h2></Col></Row>
         <Row>
 
@@ -24,9 +23,6 @@ class Food extends Component {
         }
         </Row>
       </Container>
-    </Jumbotron>
-  
-      
     </div>
   );
 }

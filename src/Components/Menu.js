@@ -53,40 +53,41 @@ class Menu extends Component {
     
     return (
       <div>
-        <Jumbotron fluid>
-          <Container>
+          <Container fluid>
             <Row>
-            
-              <Col xs="4"><Button color="danger" onClick={this.selectBreakfast}>DESAYUNO</Button></Col>
-              <Col xs="4"><img src={logo} alt="logo"/></Col>
-              <Col xs="4"><Button color="warning" onClick={this.selectLunch}>COMIDA</Button></Col>
-            </Row>
-            <hr/>
-
-            <Row>
-              <Food title={this.state.selectedMealTime}
-                    foodList={this.state.foodList}
-                    handleFoodClick={this.handleFoodClick}>
-              </Food> 
+              <Col xs="8">
+                <Jumbotron >
+                  <Row>
+                    <Col xs="4"><Button color="danger" onClick={this.selectBreakfast}>DESAYUNO</Button></Col>
+                    <Col xs="4"><img src={logo} alt="logo"/></Col>
+                    <Col xs="4"><Button color="warning" onClick={this.selectLunch}>COMIDA</Button></Col>
+                  </Row>
+                  <hr/>
+                  <Row>
+                    <Food title={this.state.selectedMealTime}
+                          foodList={this.state.foodList}
+                          handleFoodClick={this.handleFoodClick}>
+                    </Food> 
+                  </Row>
+                </Jumbotron>
+              </Col>
+              <Col xs="4">
+                <Jumbotron>
+                    <Row><Col><h2>Comanda</h2></Col></Row>
+                    <Row>
+                        <ListGroup>
+                        {
+                          this.state.orders.map(order =>{
+                            return <ListGroupItem>{order}</ListGroupItem>
+                          })
+                        }
+                        </ListGroup>
+                    </Row>
+                    <Row><Col>Total: ${this.state.total}</Col></Row>
+                  </Jumbotron>
+              </Col>
             </Row>
           </Container>
-        </Jumbotron>
-        
-        <Jumbotron fluid>
-          <Container>
-              <Row><Col><h2>Comanda</h2></Col></Row>
-              <Row>
-                  <ListGroup>
-                  {
-                    this.state.orders.map(order =>{
-                      return <ListGroupItem>{order}</ListGroupItem>
-                    })
-                  }
-                  </ListGroup>
-              </Row>
-              <Row><Col>Total: ${this.state.total}</Col></Row>
-          </Container>
-      </Jumbotron>
       </div>
     );
   }
